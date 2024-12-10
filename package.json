@@ -1,0 +1,44 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:push": " npx drizzle-kit push",
+    "db:generate": "drizzle-kit generate:pg",
+    "db:studio": "npx drizzle-kit studio"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^6.8.2",
+    "@google/generative-ai": "^0.21.0",
+    "@neondatabase/serverless": "^0.10.4",
+    "@radix-ui/react-collapsible": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@react-three/drei": "^9.120.4",
+    "@react-three/fiber": "^8.17.10",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.38.0",
+    "gsap": "^3.12.5",
+    "lucide-react": "^0.468.0",
+    "moment": "^2.30.1",
+    "next": "15.0.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-webcam": "^7.2.0",
+    "sonner": "^1.7.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.171.0",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.30.0",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1"
+  }
+}
