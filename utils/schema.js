@@ -1,5 +1,5 @@
 import { pgTable } from "drizzle-orm/pg-core";
-import { serial, text, varchar } from "drizzle-orm/pg-core";
+import { serial, text, varchar, boolean, integer, timestamp } from "drizzle-orm/pg-core";
 
 export const MockInterview = pgTable('mockInterview', {
     id: serial('id').primaryKey(),
@@ -25,8 +25,6 @@ export const Question = pgTable('question', {
     mockId: varchar('mockId').notNull()
 });
 
-
-
 export const UserAnswer = pgTable('userAnswer',{
     id: serial('id').primaryKey(),
     mockIdRef: varchar('mockId').notNull(),
@@ -46,3 +44,18 @@ export const Newsletter = pgTable('newsletter',{
     newMessage: text('newMessage'),
     createdAt: varchar('createdAt')
 })
+
+export const UserSettings = pgTable('user_settings', {
+  id: serial('id').primaryKey(),
+  userEmail: text('user_email').notNull(),
+  darkMode: boolean('dark_mode').default(false),
+  notifications: boolean('notifications').default(true),
+  sound: boolean('sound').default(true),
+  voiceResponse: boolean('voice_response').default(false),
+  interviewDuration: integer('interview_duration').default(15),
+  autoSave: boolean('auto_save').default(true),
+  privacyMode: boolean('privacy_mode').default(false),
+  volume: integer('volume').default(80),
+  createdAt: timestamp('created_at').defaultNow(),
+  updatedAt: timestamp('updated_at').defaultNow(),
+});
